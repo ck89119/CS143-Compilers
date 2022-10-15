@@ -810,7 +810,7 @@ void program_class::semant()
         for (auto p : path) {
             attribute_table.enterscope();
             Features features = all_classes[p]->GetFeatures();
-            for (int j = features->first(); features->more(j);j = features->next(j)) {
+            for (int j = features->first(); features->more(j); j = features->next(j)) {
                 Feature feature = features->nth(j);
                 feature->AddAttributeToTable();
             }
@@ -833,8 +833,8 @@ void program_class::semant()
     log << std::endl;
 
     if (class_table->errors()) {
-	cerr << "Compilation halted due to static semantic errors." << endl;
-	exit(1);
+        cerr << "Compilation halted due to static semantic errors." << endl;
+        exit(1);
     }
 }
 
